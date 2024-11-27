@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+<body>
+
+  <!-- Header Section -->
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Social Media Dashboard</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#id1">Engagement Rate</a></li>
+            <li class="nav-item"><a class="nav-link" href="#id2">Condition</a></li>
+            <li class="nav-item"><a class="nav-link" href="#myChart">Alystics</a></li>
+
+          </ul>
+        </div>
+        <button class="btn btn-outline-secondary theme-toggle" onclick="refresh()">NEW DATA</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Summary Cards -->
+<div id="home">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Followers</h5>
+            <p class="card-text">1,250</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Engagement</h5>
+            <p class="card-text">76%</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Content Performance</h5>
+            <p class="card-text">Good</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Chart Section -->
+  <div class="container mt-4" id="id1">
+    <canvas id="engagementChart" height="150"></canvas>
+  </div>
+
+  <br><br>
+
+  <canvas id="myChart" style="width:100%;max-width:100%; height:500px; margin-bottom: -22%; position: static;"></canvas>
+
+
+  <script src="app.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

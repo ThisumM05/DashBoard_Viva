@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    .header {
+      background: #343a40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    canvas {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Sales Dashboard</h1>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h3>Total Sales</h3>
+      <p id="totalSales">$0</p>
+    </div>
+    <div class="card">
+      <h3>Sales Over Time</h3>
+      <canvas id="salesChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Sample data
+    const salesData = [120, 150, 170, 90, 200, 250];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+
+    // Calculate Total Sales
+    document.getElementById('totalSales').textContent = `$${salesData.reduce((a, b) => a + b, 0)}`;
+
+    // Sales Chart
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Monthly Sales ($)',
+          data: salesData,
+          borderColor: '#007bff',
+          backgroundColor: 'rgba(0, 123, 255, 0.1)',
+          fill: true,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

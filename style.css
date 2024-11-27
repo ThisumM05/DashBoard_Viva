@@ -1,0 +1,50 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+
+  .card {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.842);
+    border-radius: 8px;
+    background: rgb(73, 122, 185);
+  }
+
+  .navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .piechart {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    justify-content: center;
+    position: sticky;
+    align-items: center;
+    display: flex;
+    text-align: center; 
+    margin-left: 35%;
+    background-image: conic-gradient(
+        rgb(51, 56, 157) 70deg,
+        rgb(31, 95, 152) 0 200deg,
+        rgb(123, 150, 186) 0 35deg
+    
+
+    );
+    border: 2px solid black;
+}
+
+  .dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .dark-theme .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+
+  .dark-theme .navbar {
+    background-color: #1c1c1c;
+  }
+
+  .theme-toggle {
+    transition: background-color 0.3s, color 0.3s;
+  }
